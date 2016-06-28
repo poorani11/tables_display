@@ -6,7 +6,7 @@ $bp-large: 75em;
 
 html, body, input, select, textarea
 {
-    font-size: 1.05em;
+	font-size: 1.05em;
 }
 
 * { 
@@ -16,9 +16,6 @@ html, body, input, select, textarea
 body { 
 	margin-top:5%;
 	font: 14px/1.4 Georgia, Serif; 
-}
-#page-wrap {
-	margin: 50px;
 }
 p {
 	margin: 20px 0; 
@@ -46,10 +43,10 @@ p {
 		text-align: left; 
 	}
 
-  @media 
+	@media 
 	only screen and (max-width: 48em),
 	(min-device-width: 49em) and (max-device-width: 75em)  {
-	
+
 		/* Force table to not be like tables anymore */
 		table, thead, tbody, th, td, tr { 
 			display: block; 
@@ -58,8 +55,12 @@ p {
 		/* Hide table headers (but not display: none;, for accessibility) */
 		thead tr { 
 			position: absolute;
-			top: -625em;
-			left: -625em;
+			clip: rect(1px, 1px, 1px, 1px);
+			padding: 0;
+			border: 0;
+			height: 1px; 
+			width: 1px; 
+			overflow: hidden;
 		}
 		
 		tr { border: 1px solid #ccc; }
@@ -97,17 +98,17 @@ p {
 	
 	/* Smartphones (portrait and landscape) ----------- */
 	@media only screen
-	and (min-device-width : 15em)
-	and (max-device-width : 30em) {
+	and (min-device-width : 30em)
+	and (max-device-width : 48em) {
 		body { 
 			padding: 0; 
 			margin: 0; 
-			width: 15em; }
+			width: 30em; }
 		}
-	
-	/* iPads (portrait and landscape) ----------- */
-	@media only screen and (min-device-width: 48em) and (max-device-width: 75em) {
-		body { 
-			width: 30em; 
+
+		/* iPads (portrait and landscape) ----------- */
+		@media only screen and (min-device-width: 48em) and (max-device-width: 62em) {
+			body { 
+				width: 48em; 
+			}
 		}
-	}
