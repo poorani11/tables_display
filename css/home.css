@@ -1,0 +1,113 @@
+$bp-check: 15em; 
+$bp-xtrasmall: 30em;
+$bp-small: 48em;
+$bp-medium: 62em;
+$bp-large: 75em;
+
+html, body, input, select, textarea
+{
+    font-size: 1.05em;
+}
+
+* { 
+	margin: 0; 
+	padding: 0; 
+}
+body { 
+	margin-top:5%;
+	font: 14px/1.4 Georgia, Serif; 
+}
+#page-wrap {
+	margin: 50px;
+}
+p {
+	margin: 20px 0; 
+}
+
+	/* 
+	Generic Styling, for Desktops/Laptops 
+	*/
+	table { 
+		width: 100%; 
+		border-collapse: collapse; 
+	}
+	/* Zebra striping */
+	tr:nth-of-type(odd) { 
+		background: #eee; 
+	}
+	#table-head{ 
+		background: #333; 
+		color: white; 
+		font-weight: bold; 
+	}
+	td, th { 
+		padding: 6px; 
+		border: 1px solid #ccc; 
+		text-align: left; 
+	}
+
+  @media 
+	only screen and (max-width: 48em),
+	(min-device-width: 49em) and (max-device-width: 75em)  {
+	
+		/* Force table to not be like tables anymore */
+		table, thead, tbody, th, td, tr { 
+			display: block; 
+		}
+		
+		/* Hide table headers (but not display: none;, for accessibility) */
+		thead tr { 
+			position: absolute;
+			top: -625em;
+			left: -625em;
+		}
+		
+		tr { border: 1px solid #ccc; }
+		
+		td { 
+			/* Behave  like a "row" */
+			border: none;
+			border-bottom: 1px solid #eee; 
+			position: relative;
+			padding-left: 50%; 
+		}
+		
+		td:before { 
+			/* Now like a table header */
+			position: absolute;
+			/* Top/left values mimic padding */
+			top: 6px;
+			left: 6px;
+			width: 45%; 
+			padding-right: 10px; 
+			white-space: nowrap;
+		}
+		
+		/*
+		Label the data
+		*/
+		td:nth-of-type(1):before { content: "Film Title"; }
+		td:nth-of-type(2):before { content: "Released"; }
+		td:nth-of-type(3):before { content: "Studio"; }
+		td:nth-of-type(4):before { content: "Worldwide Gross"; }
+		td:nth-of-type(5):before { content: "Domestic Gross"; }
+		td:nth-of-type(6):before { content: "Foreign Gross"; }
+		td:nth-of-type(7):before { content: "Budget"; }
+	}
+	
+	/* Smartphones (portrait and landscape) ----------- */
+	@media only screen
+	and (min-device-width : 15em)
+	and (max-device-width : 30em) {
+		body { 
+			padding: 0; 
+			margin: 0; 
+			width: 15em; }
+		}
+	
+	/* iPads (portrait and landscape) ----------- */
+	@media only screen and (min-device-width: 48em) and (max-device-width: 75em) {
+		body { 
+			width: 30em; 
+		}
+	}
